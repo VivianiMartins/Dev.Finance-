@@ -1,0 +1,404 @@
+@charset "UTF-8";
+/*Global*/
+.dark {
+  background: var(--black);
+  color: var(--white);
+  /*Links e buttons*/
+  /*Header*/
+  /*Section 1*/
+  /*section 2*/
+  /*Modal*/
+  /*Form*/
+  /*Footer*/
+}
+.dark h2 {
+  color: var(--white);
+}
+.dark a {
+  color: var(--white);
+}
+.dark a:hover {
+  color: var(--bright-green);
+}
+.dark .button.cancel {
+  color: var(--yellow);
+  border: solid 2px var(--yellow);
+}
+.dark .button.cancel:hover {
+  opacity: 1;
+}
+.dark button {
+  background: var(--dark-green);
+}
+.dark button:hover {
+  background: var(--bright-green);
+}
+.dark .dark-mode {
+  color: var(--dark-blue);
+  border: solid 2px var(--dark-blue);
+  background-color: var(--white);
+}
+.dark header {
+  background: #949494;
+}
+.dark .container-cards .card {
+  background: var(--gray);
+  color: var(--white);
+}
+.dark .container-cards .card.total {
+  background: var(--dark-green);
+}
+.dark #data-table th {
+  color: var(--white);
+  opacity: 1;
+}
+.dark #data-table tbody tr {
+  opacity: 1;
+}
+.dark #data-table tbody tr:hover {
+  opacity: 0.7;
+}
+.dark #data-table td {
+  background: var(--gray);
+}
+.dark #data-table td.description {
+  color: var(--white);
+}
+.dark #data-table td.income {
+  color: var(--bright-green);
+}
+.dark #data-table td.expense {
+  color: var(--yellow);
+}
+.dark #minusImage {
+  opacity: 1;
+}
+.dark .modal-overlay {
+  background-color: rgba(141, 137, 137, 0.424);
+}
+.dark .modal {
+  background-color: var(--black);
+}
+.dark .help {
+  color: var(--yellow);
+  opacity: 0.8;
+}
+.dark footer {
+  color: var(--white);
+}
+
+/*Global*/
+:root {
+  --white: #fff;
+  --dark-blue:#363F5F;
+  --light-green: #49AA26;
+  --bright-green: #3dd705;
+  --dark-green: #2D4A22;
+  --text: #969CB2;
+  --background: #F0F2F5;
+  --red: #E92929;
+  --yellow: #e6bc37;
+  --black: #000000;
+  --gray: #535a61;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--dark-blue);
+  font-weight: 400;
+}
+
+.sr-only {
+  /*Para fazê-lo sumir mas ser lido por leitores de tela, display none afeta o leitor*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/*Links e buttons*/
+a {
+  color: var(--light-green);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--bright-green);
+  text-decoration: underline;
+}
+
+button {
+  color: var(--white);
+  background: var(--light-green);
+  border: none;
+  font-size: 1rem;
+}
+button:hover {
+  background: var(--bright-green);
+}
+
+.button .new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+}
+.button.cancel {
+  color: var(--red);
+  border: solid 2px var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+.button.cancel:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.dark-mode {
+  border: solid 2px var(--white);
+  color: var(--white);
+  background: var(--dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  height: 48px;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/*Header*/
+header {
+  background: var(--dark-green);
+  padding: 2rem 0rem 10rem;
+  text-align: center;
+}
+
+/*Main*/
+.container {
+  /*Função para definir a largura min, entra com dois valores, view port e 
+  pixels, ele vai pegar a menor*/
+  width: min(90vw, 1120px);
+  margin: auto;
+}
+
+/*Section 1*/
+#balance {
+  margin-top: -5rem;
+  margin-bottom: 5rem;
+}
+#balance h2 {
+  color: var(--white);
+}
+
+.container-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-cards .card {
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  color: var(--dark-blue);
+  max-width: 30%;
+  width: 100%;
+}
+.container-cards .card h3 {
+  font-weight: 400;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-cards .card p {
+  line-height: 3rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+.container-cards .card.total {
+  background: var(--light-green);
+  color: var(--white);
+}
+
+/*Outra forma de fazer isso:
+.container-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  ou grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; 
+}
+*/
+/*section 2*/
+#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+}
+#data-table th {
+  /*background: var(--white);*/
+  color: var(--dark-blue);
+  opacity: 0.6;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+#data-table tbody tr {
+  opacity: 0.7;
+}
+#data-table tbody tr:hover {
+  opacity: 1;
+}
+#data-table td {
+  background: var(--white);
+  padding: 1rem 2rem;
+}
+#data-table td.description {
+  color: var(--dark-blue);
+}
+#data-table td.income {
+  color: var(--light-green);
+}
+#data-table td .expense {
+  color: var(--red);
+}
+#data-table thead tr th:first-child, #data-table tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+#data-table thead tr th:last-child, #data-table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/*Modal*/
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: var(--background);
+  padding: 2.4rem;
+  position: relative;
+  max-width: 500px;
+  width: 95%;
+}
+
+/*Form*/
+#form h2 {
+  margin-top: 0;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+.input-group input {
+  border: none;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.25rem;
+  font-size: 1.125rem;
+}
+.input-group.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-group.actions .button.cancel, .input-group.actions button {
+  width: 45%;
+  height: 50px;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.help {
+  color: var(--red);
+  opacity: 0.5;
+}
+
+/*Footer*/
+footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4rem 0 2rem;
+  color: var(--dark-blue);
+}
+
+/*Responsivo*/
+@media (max-width: 1024px) {
+  html {
+    font-size: 93.75%;
+    /*15px*/
+  }
+
+  .dark-mode {
+    width: 40%;
+  }
+
+  .container-cards {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .container-cards .card {
+    max-width: 85%;
+  }
+}
+@media (max-width: 678px) {
+  html {
+    font-size: 87.5%;
+    /*14px*/
+  }
+
+  #data-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+@media (max-width: 480px) {
+  .input-group.actions {
+    flex-direction: column;
+  }
+  .input-group.actions button {
+    width: 65%;
+  }
+  .input-group.actions .button.cancel {
+    margin-bottom: 0.75rem;
+    width: 65%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

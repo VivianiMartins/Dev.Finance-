@@ -1,0 +1,117 @@
+/*Global*/
+
+.dark{
+  background:var(--black);
+  color: var(--white);
+
+  h2{
+    color: var(--white);
+  }
+
+  /*Links e buttons*/
+  a{
+    color: var(--white);
+
+    &:hover{
+      color: var(--bright-green);
+    }
+  }
+
+  .button{
+    &.cancel{
+      color: var(--yellow);
+      border: solid 2px var(--yellow);
+
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+
+  button{
+    background: var(--dark-green);
+
+    &:hover{
+      background: var(--bright-green);
+    }
+  }
+
+  .dark-mode{
+    color: var(--dark-blue);
+    border: solid 2px var(--dark-blue);
+    background-color: var(--white);
+  }
+
+  /*Header*/
+  header{
+    background: #949494;
+  }
+
+  /*Section 1*/
+
+  .container-cards .card{
+    background: var(--gray);
+    color: var(--white);
+
+    &.total{
+      background: var(--dark-green);
+    }
+  }
+
+  /*section 2*/
+  #data-table {
+    th{
+      color: var(--white);
+      opacity: 1;
+    }
+
+    tbody tr{
+      opacity: 1;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+
+    td{
+      background: var(--gray);
+
+      &.description{
+        color: var(--white);
+      }
+
+      &.income{
+        color: var(--bright-green);
+      }
+
+      &.expense{
+        color: var(--yellow);
+      }
+
+    }
+  }
+  
+  #minusImage{
+    opacity: 1;
+  }
+
+  /*Modal*/
+  .modal-overlay{
+    background-color: rgba(141, 137, 137, 0.424);
+  }
+
+  .modal{
+    background-color: var(--black);
+  }
+
+  /*Form*/
+  .help {
+    color: var(--yellow);
+    opacity: 0.8;
+  }
+
+  /*Footer*/
+  footer{
+    color: var(--white);
+  }
+} 
+
