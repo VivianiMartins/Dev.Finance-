@@ -78,6 +78,9 @@
 }
 .dark .modal {
   background-color: var(--black);
+  /*input, select{
+    color: var(--text-color);
+  }*/
 }
 .dark .help {
   color: var(--yellow);
@@ -277,7 +280,7 @@ header {
 #data-table td.income {
   color: var(--light-green);
 }
-#data-table td .expense {
+#data-table td.expense {
   color: var(--red);
 }
 #data-table thead tr th:first-child, #data-table tbody tr td:first-child {
@@ -322,7 +325,7 @@ header {
 .input-group {
   margin-bottom: 1rem;
 }
-.input-group input {
+.input-group input, .input-group select {
   border: none;
   width: 100%;
   padding: 0.8rem;

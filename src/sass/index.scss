@@ -208,7 +208,7 @@ header{
       color: var(--light-green);
     }
 
-    .expense{
+    &.expense{
       color: var(--red);
     }
   }
@@ -261,12 +261,13 @@ header{
 .input-group{
   margin-bottom: 1rem;
 
-  input{
+  input, select{
     border: none;
     width:100%;
     padding: 0.8rem;
     border-radius: 0.25rem;
     font-size: 1.125rem;
+    //color: var(--text-color);
   }
 
   &.actions{

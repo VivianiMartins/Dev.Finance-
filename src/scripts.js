@@ -31,6 +31,15 @@ const Storage = {
 
 //formatando o valor da moeda:
 const Utils = {
+  /*formatType(type) {
+    if (type === "e"){
+      type = "+";
+    }else{
+      type = "-";
+    }
+     return type;
+  },*/
+
   formatAmount(amount) {
     amount = amount * 100;
     return Math.round(amount);
@@ -74,6 +83,7 @@ const DOM = {
   innerHTMLTransaction(transaction, index){
     //console.log('Cheguei 2');
     //criando variável com condicional para mudar classes:
+    /*const CSSclass = Utils.formatType(type) == "" ? "income" : "expense";*/
     const CSSclass = transaction.amount >= 0 ? "income" : "expense";
 
     //formatando a moeda:
@@ -185,16 +195,28 @@ const Transaction = {
   }
 }
 
+/*var select = document.querySelector("select#type");
+console.log(select);
+for (var i = 0; i < select.length; i++) {
+  console.log(select.options[i])
+}
+var optionText = select.options[select.selectedIndex].text;
+console.log(optionText);
+console.log(optionText[1]);
+console.log(optionText[2]);*/
+
 //recebendo as informações do formulário
 const Form = {
   //pegando os dados do formulário:
   description: document.querySelector('input#description'),
+ /* type: document.querySelector('select#type'),*/
   amount: document.querySelector('input#amount'),
   date: document.querySelector('input#date'),
 
   getValues() {
     return{
       description: Form.description.value,
+     /* type: Form.type.options[type.selectedIndex].text,*/
       amount: Form.amount.value,
       date: Form.date.value
     }
@@ -202,7 +224,7 @@ const Form = {
 
   //verificar se todas as informações foram preenchidas
   validateFields(){
-    const { description, amount, date } = Form.getValues();
+    const { description, type, amount, date } = Form.getValues();
     //verificando se estão vazias
     if ( description.trim() === "" || amount.trim() === "" || date.trim() === ""){
       throw new Error("Preencha todos os campos");
@@ -211,13 +233,15 @@ const Form = {
 
   //formatar os dados para salvar, nesse caso se usa o let p conseguir formatá-los
   formatValues(){
-    let { description, amount, date } = Form.getValues();
+    let { description, type, amount, date } = Form.getValues();
 
+    /*type = Utils.formatType(type);*/
     amount = Utils.formatAmount(amount);
     date = Utils.formatDate(date);
     
     return {
       description,
+      /*type,*/
       amount,
       date
     }
@@ -231,6 +255,7 @@ const Form = {
   //apagar os dados no formulário, deixar em branco de novos
   clearFields(){
     Form.description.value = "",
+    /*Form.type.selectedIndex = "",*/
     Form.amount.value = "",
     Form.date.value = ""
   },
@@ -260,7 +285,7 @@ const Form = {
     }
   }
 }
-
+console.log(Form)
 /*para acessar esse storage, vou em application e Local Storage irá abrir 
 o que existe lá*/
 
